@@ -1,0 +1,1 @@
+web: chainlit run tran_agent.py --host 0.0.0.0 --port $PORT

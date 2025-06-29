@@ -30,7 +30,7 @@ async def on_chat_start():
     - Translate 'Thank you for your help' into German.
 
     Go ahead and type your sentence below ⬇️
-    """
+"""
 
     await cl.Message(content=welcome_message).send()
 

@@ -14,7 +14,25 @@ if not gemini_api:
 @cl.on_chat_start
 async def on_chat_start():
     cl.user_session.set("chat_history", [])
-    await cl.Message(content="Welcome to the **Translator Agent**!\n\nPlease tell me **what you want to translate** and **into which language**.").send()
+
+    welcome_message = """Welcome to the **Translator Agent**! 🌍
+
+    Please tell me:
+    - **What you want to translate**
+    - **Into which language**
+
+    ---
+
+    ### 💡 Example Prompts:
+    - Translate 'Hello, how are you?' into Spanish.
+    - Can you translate 'Good morning' into French?
+    - Please translate 'Where is the bathroom?' into Japanese.
+    - Translate 'Thank you for your help' into German.
+
+    Go ahead and type your sentence below ⬇️
+    """
+
+    await cl.Message(content=welcome_message).send()
 
     
 @cl.on_message
